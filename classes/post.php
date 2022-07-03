@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 class Post {
     //properties for class Post.
-    private string $title;
-    private DateTime $date;
-    private string $content;
-    private string $author;
+    public string $title;
+    public DateTime $date;
+    public string $content;
+    public string $author;
 
     /**
      * @param string $title
