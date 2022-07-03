@@ -16,8 +16,4 @@
     .container {
         text-align: center;
     }
-    .container img {
-        margin: auto;
-        float: none;
-        display: block;
-    }
+}
