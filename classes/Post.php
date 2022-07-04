@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 class Post {
     //properties for class Post.
-    public string $title;
-    public DateTime $date;
-    public string $content;
-    public string $author;
+    private string $title;
+    private DateTime $date;
+    private string $content;
+    private string $author;
 
     /**
      * @param string $title
@@ -16,11 +16,18 @@ class Post {
      */
     public function __construct(string $title, string $content, string $author)
     {
+        //get_object_vars — Gets the properties of the given object.
         //Declare values for the post-properties+Remove white space.
         $this->title = trim($title);
         $this->date = new DateTime();//To create a new date and time object, you use the DateTime class.
         $this->content = trim($content);
         $this->author = trim($author);
+    }
+
+    //get_object_vars respects visibility, so you need to add an "expose" method to handle that.
+    public function expose():array
+    {
+        return get_object_vars($this);
     }
 
     /**
